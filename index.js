@@ -1,14 +1,17 @@
-const eventbrite = require('./eventbrite');
+const eventbrite = require('./event');
 let fs = require('fs');
 (async () =>{
 
 
     await eventbrite.initialize('blockchain')
 
-    let results = await eventbrite.getResults(20)
+    let results = await eventbrite.getResults(100)
    
-    debugger;
-    let myJsonString = JSON.stringify(results);
+    debugger
+    let resultDetails = await eventbrite.parseResultDetails(results)
+    
+    debugger
+    let myJsonString = JSON.stringify(resultDetails);
     fs.writeFileSync('events2.json', myJsonString)
 }
 )()
