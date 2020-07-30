@@ -30,14 +30,11 @@ const self ={
         do{
             let new_results = await self.parseResults()
             results = [...results, ...new_results]
-            console.log(results)
-            console.log(nr)
-//'button[data-spec="page-next"]'
-        //    if(results.length < nr){
+
                 let nextPageButton=''
                 try{
                     nextPageButton = await self.page.$('button[data-spec="page-next"]')
-                    console.log(nextPageButton)
+            
                 }catch(e){
                     console.log(e)
                 }
@@ -55,17 +52,14 @@ const self ={
 
                     break
                 }
-         //   }
-                console.log(results.length)
-                console.log(nr)
+ 
+        
         }while(results.length <= nr)
 
         return results.slice(0, nr)
     },
 
     parseResultDetails: async (arrayy)=>{
-      
-        console.log(arrayy)
 
         let data=[]
         for (const {Title, Link, Date, Price, } of arrayy) {
