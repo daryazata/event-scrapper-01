@@ -1,7 +1,9 @@
 const puppeteer = require('puppeteer');
 let fs = require('fs')
+const dotenv = require("dotenv")
+dotenv.config()
 
-const subreddit_url = (event) =>`https://www.eventbrite.de/d/online/${event}/`
+const subreddit_url = (event) =>`${process.env.link}${event}/`
 
 const self ={
 
