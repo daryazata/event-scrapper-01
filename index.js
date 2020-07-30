@@ -14,6 +14,6 @@ let fs = require('fs');
     
   //  debugger
     let myJsonString = JSON.stringify(resultDetails);
-    fs.writeFileSync(`jsonFiless/${argument}-${count}.json`, myJsonString)
+    fs.writeFileSync(`jsonFiles/${argument}-${count}.json`, myJsonString)
 }
 )()
